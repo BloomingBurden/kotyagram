@@ -1,0 +1,42 @@
+{
+  "name": "template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"gulp\" \"npm run server\"",
+    "server": "json-server -w server/data.json -p 3001",
+    "svgSprite": "gulp svgSprite"
+  },
+  "author": "BloomingBurden",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "latest",
+    "concurrently": "^7.6.0",
+    "del": "latest",
+    "gulp": "latest",
+    "gulp-autoprefixer": "latest",
+    "gulp-clean-css": "latest",
+    "gulp-file-include": "latest",
+    "gulp-group-css-media-queries": "latest",
+    "gulp-imagemin": "latest",
+    "gulp-newer": "latest",
+    "gulp-notify": "latest",
+    "gulp-plumber": "latest",
+    "gulp-pretty-html": "latest",
+    "gulp-rename": "latest",
+    "gulp-replace": "latest",
+    "gulp-sass": "latest",
+    "gulp-svg-sprite": "latest",
+    "gulp-webpcss": "latest",
+    "imagemin-webp": "latest",
+    "json-server": "^0.17.1",
+    "node-sass-tilde-importer": "latest",
+    "normalize.css": "latest",
+    "sass": "latest",
+    "webp-converter": "2.2.3",
+    "webpack": "latest",
+    "webpack-stream": "latest"
+  }
+}
