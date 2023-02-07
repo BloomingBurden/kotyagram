@@ -65,3 +65,12 @@ ul {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
+.hidden {
+  display: none;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+}

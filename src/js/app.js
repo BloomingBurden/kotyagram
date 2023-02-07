@@ -1,9 +1,21 @@
 import { isWebp } from "./modules/functions.js";
 import { getHeight } from "./modules/functions.js";
-
+import { request } from "./modules/fetch.js";
 isWebp();
 getHeight();
 
+const photos = [];
+
+const onSuccess = (data) => {
+    
+};
+
+const onError = (error) => {
+    console.log(`Попробуйте позже, ошибка: ${error}`);
+}
+
+
+request(onSuccess, onError, 'GET');
 
 
 // const form = document.querySelector('.img-upload__form');

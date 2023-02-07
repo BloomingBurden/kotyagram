@@ -20,74 +20,32 @@
       <form class="upload__form" action="http://localhost:3001/data" enctype="multipart/form-data" method="POST">
         <input class="upload__input visually-hidden" id="upload-file" type="file" name="filename" required>
         <label for="upload-file">Загрузить</label>
+
+        <div class="upload__overlay">
+          <div class="upload__wrapper">
+            <div class="upload__img-container">
+              <fieldset class="upload__scale scale">
+
+              </fieldset>
+              <div class="upload__img-preview">
+                <img src="img/1.jpg" alt="Большая случайная картинка">
+              </div>
+            </div>
+          </div>
+        </div>
       </form>
     </section>
 
     <section class="pictures">
       <div class="pictures__list">
-        <a href="#" class="pictures__item">
-          <img src="img/1.jpg" alt="Случайная фотография" width="182" height="182" class="picture__img">
-        </a>
-        <a href="#" class="pictures__item">
-          <img src="img/1.jpg" alt="Случайная фотография" width="182" height="182" class="picture__img">
-        </a>
-        <a href="#" class="pictures__item">
-          <img src="img/1.jpg" alt="Случайная фотография" width="182" height="182" class="picture__img">
-        </a>
-        <a href="#" class="pictures__item">
-          <img src="img/1.jpg" alt="Случайная фотография" width="182" height="182" class="picture__img">
-        </a>
-        <a href="#" class="pictures__item">
-          <img src="img/1.jpg" alt="Случайная фотография" width="182" height="182" class="picture__img">
-        </a>
-        <a href="#" class="pictures__item">
-          <img src="img/1.jpg" alt="Случайная фотография" width="182" height="182" class="picture__img">
-        </a>
-        <a href="#" class="pictures__item">
-          <img src="img/1.jpg" alt="Случайная фотография" width="182" height="182" class="picture__img">
-        </a>
-        <a href="#" class="pictures__item">
-          <img src="img/1.jpg" alt="Случайная фотография" width="182" height="182" class="picture__img">
-        </a>
-        <a href="#" class="pictures__item">
-          <img src="img/1.jpg" alt="Случайная фотография" width="182" height="182" class="picture__img">
-        </a>
-        <a href="#" class="pictures__item">
-          <img src="img/1.jpg" alt="Случайная фотография" width="182" height="182" class="picture__img">
-        </a>
 
-        <a href="#" class="pictures__item">
-          <img src="img/1.jpg" alt="Случайная фотография" width="182" height="182" class="picture__img">
-        </a>
-        <a href="#" class="pictures__item">
-          <img src="img/1.jpg" alt="Случайная фотография" width="182" height="182" class="picture__img">
-        </a>
-        <a href="#" class="pictures__item">
-          <img src="img/1.jpg" alt="Случайная фотография" width="182" height="182" class="picture__img">
-        </a>
-        <a href="#" class="pictures__item">
-          <img src="img/1.jpg" alt="Случайная фотография" width="182" height="182" class="picture__img">
-        </a>
-        <a href="#" class="pictures__item">
-          <img src="img/1.jpg" alt="Случайная фотография" width="182" height="182" class="picture__img">
-        </a>
-        <a href="#" class="pictures__item">
-          <img src="img/1.jpg" alt="Случайная фотография" width="182" height="182" class="picture__img">
-        </a>
-        <a href="#" class="pictures__item">
-          <img src="img/1.jpg" alt="Случайная фотография" width="182" height="182" class="picture__img">
-        </a>
-
-        <a href="#" class="pictures__item">
-          <img src="img/1.jpg" alt="Случайная фотография" width="182" height="182" class="picture__img">
-        </a>
       </div>
     </section>
   </main>
 
   <template id="picture">
-    <a href="#" class="picture__item">
-      <img src="" alt="Случайная фотография" width="182" height="182" class="picture__img">
+    <a href="#" class="pictures__item">
+      <img src="" alt="Случайная фотография" class="picture__img">
     </a>
   </template>
   <script src="js/app.min.js"></script>

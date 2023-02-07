@@ -495,6 +495,15 @@ ul {
   overflow: hidden;
 }
 
+.hidden {
+  display: none;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+}
+
 .no-webp .upload {
   background-image: url("../img/bg.png"); }
 
@@ -509,7 +518,7 @@ ul {
       -ms-flex-pack: center;
           justify-content: center;
   position: relative;
-  z-index: 9999;
+  z-index: 99;
   width: 40%;
   max-width: 480px;
   background-repeat: no-repeat;
@@ -523,7 +532,7 @@ ul {
   display: -ms-flexbox;
   display: flex;
   background-color: #f04842;
-  border-radius: 60px;
+  border-radius: 40px;
   overflow: hidden;
 }
 
@@ -565,6 +574,34 @@ ul {
           transform: scale(1.1);
 }
 
+.upload__overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  overflow: auto;
+  padding: 80px 20px 30px 20px;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+}
+
+.upload__wrapper {
+  margin: 0 auto;
+  max-width: 600px;
+  width: 100%;
+}
+
+.upload__img-container {
+  position: relative;
+  max-width: 600px;
+  max-height: 600px;
+  overflow: hidden;
+  border: 6px solid #ffffff;
+}
+
 .pictures {
   position: absolute;
   top: 0;
@@ -576,9 +613,9 @@ ul {
   position: absolute;
   left: 50%;
   top: 50%;
-  -webkit-transform: translate(-50%, -50%) scale(8);
-      -ms-transform: translate(-50%, -50%) scale(8);
-          transform: translate(-50%, -50%) scale(8);
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   -webkit-column-width: 2em;
      -moz-column-width: 2em;
           column-width: 2em;
@@ -588,7 +625,7 @@ ul {
 
 .pictures__item {
   display: block;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   -webkit-transform: scale(1.001);
       -ms-transform: scale(1.001);
           transform: scale(1.001);
