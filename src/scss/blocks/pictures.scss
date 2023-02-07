@@ -1,0 +1,27 @@
+.pictures {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.pictures__list {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(8);
+  column-width: 2em;
+  width: 20vw;
+  gap: 10px;
+}
+
+
+.pictures__item {
+  display: block;
+  margin-bottom: 15px;
+  transform: scale(1.001);
+}
+
+.pictures__item img {
+  width: 100%;
+}

@@ -7,24 +7,89 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link rel="icon" href="images/favicon.png">
   <meta property="og:image" content="images/dist/preview.jpg">
-  <title>Шаблон</title>
+  <title>Котограм</title>
 
   <link rel="stylesheet" href="css/style.min.css">
 </head>
 
 <body class=index-body>
 
-  <main>
-    <div style="max-width: 1000px; margin: auto">
-      <h1 style="text-align: center">Шаблон 2023</h1>
+  <main class="content">
+    <section class="upload">
+      <h2 class="visually-hidden">Фотографии</h2>
+      <form class="upload__form" action="http://localhost:3001/data" enctype="multipart/form-data" method="POST">
+        <input class="upload__input visually-hidden" id="upload-file" type="file" name="filename" required>
+        <label for="upload-file">Загрузить</label>
+      </form>
+    </section>
 
-      <picture>
-        <source srcset="img/start_bg.webp" type="image/webp">
-        <img src="img/start_bg.jpg" alt="Заставка" style="width: 100%">
-      </picture>
-    </div>
+    <section class="pictures">
+      <div class="pictures__list">
+        <a href="#" class="pictures__item">
+          <img src="img/1.jpg" alt="Случайная фотография" width="182" height="182" class="picture__img">
+        </a>
+        <a href="#" class="pictures__item">
+          <img src="img/1.jpg" alt="Случайная фотография" width="182" height="182" class="picture__img">
+        </a>
+        <a href="#" class="pictures__item">
+          <img src="img/1.jpg" alt="Случайная фотография" width="182" height="182" class="picture__img">
+        </a>
+        <a href="#" class="pictures__item">
+          <img src="img/1.jpg" alt="Случайная фотография" width="182" height="182" class="picture__img">
+        </a>
+        <a href="#" class="pictures__item">
+          <img src="img/1.jpg" alt="Случайная фотография" width="182" height="182" class="picture__img">
+        </a>
+        <a href="#" class="pictures__item">
+          <img src="img/1.jpg" alt="Случайная фотография" width="182" height="182" class="picture__img">
+        </a>
+        <a href="#" class="pictures__item">
+          <img src="img/1.jpg" alt="Случайная фотография" width="182" height="182" class="picture__img">
+        </a>
+        <a href="#" class="pictures__item">
+          <img src="img/1.jpg" alt="Случайная фотография" width="182" height="182" class="picture__img">
+        </a>
+        <a href="#" class="pictures__item">
+          <img src="img/1.jpg" alt="Случайная фотография" width="182" height="182" class="picture__img">
+        </a>
+        <a href="#" class="pictures__item">
+          <img src="img/1.jpg" alt="Случайная фотография" width="182" height="182" class="picture__img">
+        </a>
+
+        <a href="#" class="pictures__item">
+          <img src="img/1.jpg" alt="Случайная фотография" width="182" height="182" class="picture__img">
+        </a>
+        <a href="#" class="pictures__item">
+          <img src="img/1.jpg" alt="Случайная фотография" width="182" height="182" class="picture__img">
+        </a>
+        <a href="#" class="pictures__item">
+          <img src="img/1.jpg" alt="Случайная фотография" width="182" height="182" class="picture__img">
+        </a>
+        <a href="#" class="pictures__item">
+          <img src="img/1.jpg" alt="Случайная фотография" width="182" height="182" class="picture__img">
+        </a>
+        <a href="#" class="pictures__item">
+          <img src="img/1.jpg" alt="Случайная фотография" width="182" height="182" class="picture__img">
+        </a>
+        <a href="#" class="pictures__item">
+          <img src="img/1.jpg" alt="Случайная фотография" width="182" height="182" class="picture__img">
+        </a>
+        <a href="#" class="pictures__item">
+          <img src="img/1.jpg" alt="Случайная фотография" width="182" height="182" class="picture__img">
+        </a>
+
+        <a href="#" class="pictures__item">
+          <img src="img/1.jpg" alt="Случайная фотография" width="182" height="182" class="picture__img">
+        </a>
+      </div>
+    </section>
   </main>
 
+  <template id="picture">
+    <a href="#" class="picture__item">
+      <img src="" alt="Случайная фотография" width="182" height="182" class="picture__img">
+    </a>
+  </template>
   <script src="js/app.min.js"></script>
 </body>
 

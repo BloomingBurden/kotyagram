@@ -1,4 +1,5 @@
-export function isWebp() {
+// Проверить, поддерживает ли браузер формат изображений .webp;
+const isWebp = () => {
     function testWebP(callback) {
         let webP = new Image();
         webP.onload = webP.onerror = function () {
@@ -12,3 +13,16 @@ export function isWebp() {
         document.documentElement.classList.add(className);
     });
 }
+// Установить адаптивную высоту для главного блока upload;
+const getHeight = () => {
+    const content = document.querySelector('.upload');
+
+    const setHeight = () => {
+        content.style.height = `${content.offsetWidth}px`;
+    }
+
+    window.addEventListener('DOMContentLoaded', setHeight);
+    window.addEventListener('resize', setHeight);
+}
+
+export { isWebp, getHeight }

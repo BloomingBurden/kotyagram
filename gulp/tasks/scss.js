@@ -16,11 +16,11 @@ export function scss() {
                 title: "SCSS",
                 message: "Error: <%= error.message %>"
             })))
-        .pipe(app.plugins.replace(/@img\//g, '../img/'))
         .pipe(sass({
             outputStyle: 'expanded',
             importer: tildeImporter
         }))
+        .pipe(app.plugins.replace(/@img\//g, '../img/'))
         .pipe(groupCssMediaQueries())
         .pipe(webpcss({
             webpClass: '.webp',

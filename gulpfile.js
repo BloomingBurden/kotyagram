@@ -32,6 +32,7 @@ const watcher = () => {
 };
 
 
+
 const mainTasks = gulp.parallel(copy, html, scss, js, images, fonts, svgSprite);
 
 const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
