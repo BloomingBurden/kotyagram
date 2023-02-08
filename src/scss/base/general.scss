@@ -66,6 +66,12 @@ ul {
   overflow: hidden;
 }
 
+button {
+  font: inherit;
+  border: none;
+  background: transparent;
+}
+
 .hidden {
   display: none;
 }
