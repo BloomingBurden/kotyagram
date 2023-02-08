@@ -25,4 +25,5 @@ const getHeight = () => {
     window.addEventListener('resize', setHeight);
 }
 
-export { isWebp, getHeight }
+isWebp();
+getHeight();

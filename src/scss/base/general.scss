@@ -25,6 +25,7 @@ body {
 	line-height: $lineheight;
 	color: $textcolor;
 	min-width: $mobileW;
+  font-weight: 400;
 	position: relative;
 	overflow: hidden;
   word-break: break-all;
@@ -70,6 +71,7 @@ button {
   font: inherit;
   border: none;
   background: transparent;
+  cursor: pointer;
 }
 
 .hidden {

@@ -1,8 +1,6 @@
-import { isWebp } from "./modules/functions.js";
-import { getHeight } from "./modules/functions.js";
 import { request } from "./modules/fetch.js";
-isWebp();
-getHeight();
+import './modules/functions.js';
+import './modules/edit.js';
 
 const photos = [];
 

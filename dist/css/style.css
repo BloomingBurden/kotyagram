@@ -432,11 +432,11 @@ template {
 }
 
 ::-moz-selection {
-  background-color: orange;
+  background-color: #ffe753;
 }
 
 ::selection {
-  background-color: orange;
+  background-color: #ffe753;
 }
 
 input,
@@ -451,6 +451,7 @@ body {
   line-height: 1.65;
   color: #ffffff;
   min-width: 376px;
+  font-weight: 400;
   position: relative;
   overflow: hidden;
   word-break: break-all;
@@ -499,6 +500,7 @@ button {
   font: inherit;
   border: none;
   background: transparent;
+  cursor: pointer;
 }
 
 .hidden {
@@ -598,14 +600,51 @@ fieldset {
   margin: 0 auto;
   max-width: 600px;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .upload__img-container {
   position: relative;
   max-width: 600px;
   max-height: 600px;
+  margin-bottom: 30px;
   overflow: hidden;
   border: 6px solid #ffffff;
+  background-color: #ffffff;
+}
+
+.upload__send {
+  background-color: rgba(255, 231, 83, 0.3);
+  color: #ffe753;
+  padding: 10px;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 400;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.upload__send:hover,
+.upload__send:focus {
+  background-color: rgba(255, 231, 83, 0.5);
+}
+
+.upload__img-preview {
+  max-width: 600px;
+  max-height: 600px;
 }
 
 .pictures {
@@ -643,6 +682,7 @@ fieldset {
 
 .scale {
   position: absolute;
+  z-index: 9998;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -661,7 +701,6 @@ fieldset {
   font-size: 0;
   width: 33px;
   height: 33px;
-  cursor: pointer;
   -webkit-transition: 0.3 all ease;
   -o-transition: 0.3 all ease;
   transition: 0.3 all ease;
