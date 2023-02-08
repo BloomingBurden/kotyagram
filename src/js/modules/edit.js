@@ -6,10 +6,9 @@ const imagePreview = document.querySelector('.upload__img-preview > img');
 
 const Scale = {
     MIN: 50,
-    MAX: 100,
+    MAX: 150,
     STEP: 10,
 };
-
 
 let imgName;
 
@@ -34,6 +33,7 @@ input.addEventListener('change', (evt) => {
 });
 
 
+
 // РАБОТА С ЗУМОМ
 const buttonLess = document.querySelector('.scale__button--less');
 const buttonMore = document.querySelector('.scale__button--more');
@@ -41,7 +41,7 @@ const scaleInput = document.querySelector('.scale__input');
 
 const resetSettings = () => {
     imagePreview.style = 'transform: scale(1.00)';
-    scaleInput.value = `${Scale.MAX}%`;
+    scaleInput.value = `100%`;
 }
 
 buttonLess.addEventListener('click', () => {
@@ -63,8 +63,25 @@ buttonMore.addEventListener('click', () => {
 });
 
 
-// Загрузка изображения на сервер
+// ЗАГРУЗИТЬ ИЗОБРАЖЕНИЕ НА СЕРВЕР
+
+const onSuccess = (response) => {
+    console.log(response);
+}
+
+const onError = (error) => {
+    console.log(error);
+}
+
 form.addEventListener('submit', (evt) => {
     evt.preventDefault();
 
+    let myForm = new FormData(form);
+
+    myForm.append('img', imgName);
+    myForm.delete('filename');
+
+    myForm = JSON.stringify(Object.fromEntries(myForm));
+
+    request(onSuccess, onError, 'POST', myForm);    
 })
