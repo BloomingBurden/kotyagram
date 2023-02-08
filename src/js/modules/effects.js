@@ -1,0 +1,98 @@
+const tumbler = document.querySelector('.tumbler');
+const tumblerBtn = document.querySelector('.tumbler__label');
+const tumblerSlider = document.querySelector('.tumbler__line');
+const effectsList = document.querySelector('.effects__list');
+const imgPreview = document.querySelector('.upload__img-preview > img');
+
+const SliderValue = {
+    MAX: 100,
+    MIN: 1,
+};
+
+const effects = {
+    none: () => {
+        return 'none';
+    },
+    chrome: () => {
+        return `grayscale(${0.01 * currentValue})`;
+    },
+    sepia: () => {
+        return `sepia(${0.01 * currentValue})`;
+    },
+    marvin: () => {
+        return `invert(${currentValue}%)`;
+    },
+    phobos: () => {
+        return `blur(${0.03 * currentValue}px)`;
+    },
+    heat: () => {
+        return `brightness(${0.03 * currentValue})`;
+    },
+};
+
+
+// ЗАДАТЬ ЭФФЕКТ НА ФОТО
+let currentValue = SliderValue.MAX;
+let nameOfEffect;
+let procent = 4.53;
+
+const getProcent = () => {
+    procent = tumblerSlider.offsetWidth / 100;
+}
+
+const setValueEffect = () => {
+    imgPreview.style.filter = effects[nameOfEffect]();
+}
+
+const showTumbler = (evt) => {
+    const target = evt.target.closest('.effects__preview');
+
+    if (!target) return;
+
+    if (target.classList.contains('effects__preview--none')) {
+        tumbler.classList.add('hidden');
+        window.removeEventListener('resize', getProcent);
+    } else {
+        tumbler.classList.remove('hidden');
+        getProcent();
+        window.addEventListener('resize', getProcent);
+    }
+
+    nameOfEffect = target.className.slice(target.className.indexOf('--') + 2);
+    setValueEffect();
+}
+
+effectsList.addEventListener('click', showTumbler);
+
+// РЕГУЛИРОВКА ЭФФЕКТА НА ФОТО
+tumblerBtn.addEventListener('pointerdown', (evt) => {
+    evt.preventDefault();
+
+    const moveElem = (evt) => {
+        const coordLine = tumbler.getBoundingClientRect().left + 6;
+        const value = evt.pageX - coordLine;
+        const tumblerWidth = tumblerBtn.offsetWidth / 2;
+        currentValue = Math.round( value / procent);
+
+        if (currentValue >= 100) {
+            currentValue = 100;
+            return;
+        }
+        if (currentValue <= 0) {
+            currentValue = 0;
+            return;
+        }
+        
+        tumblerBtn.style.left = `calc(${currentValue}% - ${tumblerWidth}px)`;
+
+        setValueEffect();
+    }
+
+    const clearElem = (evt) => {
+        document.removeEventListener('pointermove', moveElem);
+    };
+
+    tumblerBtn.addEventListener('pointerup', clearElem);
+    document.addEventListener('pointermove', moveElem);
+});
+

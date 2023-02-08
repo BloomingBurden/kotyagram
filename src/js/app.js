@@ -1,6 +1,7 @@
 import { request } from "./modules/fetch.js";
 import './modules/functions.js';
 import './modules/edit.js';
+import './modules/effects.js';
 
 const photos = [];
 
