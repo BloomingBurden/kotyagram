@@ -17,13 +17,14 @@
 }
 
 .effects__preview {
-  border: 4px solid transparent;
+  border: 4px solid #314359;
   display: block;
   width: 70px;
   height: 70px;
   border-radius: 10px;
   cursor: pointer;
 
+  background-color: #314359;
   background-image: url('@img/preview-barsik.jpg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -35,5 +36,17 @@
 
   &--sepia {
     filter: sepia(1);
+  }
+
+  &--marvin {
+    filter: invert(100%);
+  }
+
+  &--phobos {
+    filter: blur(3px);
+  }
+
+  &--heat {
+    filter: brightness(3);
   }
 }
