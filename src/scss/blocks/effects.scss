@@ -1,0 +1,39 @@
+.effects__list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.effects__item {
+  margin-right: 15px;
+  text-align: center;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.effects__input:checked + label > .effects__preview {
+  border: 4px solid $accent;
+}
+
+.effects__preview {
+  border: 4px solid transparent;
+  display: block;
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+  cursor: pointer;
+
+  background-image: url('@img/preview-barsik.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  &--chrome {
+    filter: grayscale(1);
+  }
+
+  &--sepia {
+    filter: sepia(1);
+  }
+}

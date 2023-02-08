@@ -80,7 +80,6 @@ form.addEventListener('submit', (evt) => {
 
     myForm.append('img', imgName);
     myForm.delete('filename');
-
     myForm = JSON.stringify(Object.fromEntries(myForm));
 
     request(onSuccess, onError, 'POST', myForm);    

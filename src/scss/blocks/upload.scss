@@ -24,49 +24,49 @@
   background-color: #f04842;
   border-radius: 40px;
   overflow: hidden;
+}
 
-  label {
-    padding-top: 15px;
-    position: relative;
-    height: 100%;
-    width: 100%;
-    text-align: center;
+.upload__file {
+  padding-top: 15px;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  text-align: center;
 
-    font-size: 16px;
-    text-transform: uppercase;
-    will-change: transform;
-    transition: 0.3s all ease;
-    cursor: pointer;
+  font-size: 16px;
+  text-transform: uppercase;
+  will-change: transform;
+  transition: 0.3s all ease;
+  cursor: pointer;
+
+  @media (max-width: 900px) {
+    font-size: 0;
+  }
+
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 53.333%;
+    height: 53.333%;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 10px;
+
+    background-image: url('@img/svg/insta-icon.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 
     @media (max-width: 900px) {
-      font-size: 0;
+      top: 50%;
+      transform: translate(-50%, -50%);
     }
-  
+  }
 
-    &::after {
-      content: '';
-      position: absolute;
-      width: 53.333%;
-      height: 53.333%;
-      left: 50%;
-      transform: translateX(-50%);
-      bottom: 10px;
-
-      background-image: url('@img/svg/insta-icon.svg');
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-
-      @media (max-width: 900px) {
-        top: 50%;
-        transform: translate(-50%, -50%);
-      }
-    }
-
-    &:hover,
-    &:focus {
-      transform: scale(1.1);
-    }
+  &:hover,
+  &:focus {
+    transform: scale(1.1);
   }
 }
 

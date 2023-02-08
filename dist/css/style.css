@@ -544,7 +544,7 @@ fieldset {
   overflow: hidden;
 }
 
-.upload__form label {
+.upload__file {
   padding-top: 15px;
   position: relative;
   height: 100%;
@@ -559,7 +559,7 @@ fieldset {
   cursor: pointer;
 }
 
-.upload__form label::after {
+.upload__file::after {
   content: "";
   position: absolute;
   width: 53.333%;
@@ -575,8 +575,8 @@ fieldset {
   background-position: center;
 }
 
-.upload__form label:hover,
-.upload__form label:focus {
+.upload__file:hover,
+.upload__file:focus {
   -webkit-transform: scale(1.1);
       -ms-transform: scale(1.1);
           transform: scale(1.1);
@@ -766,12 +766,58 @@ fieldset {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
+.effects__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.effects__item {
+  margin-right: 15px;
+  text-align: center;
+}
+
+.effects__item:last-child {
+  margin-right: 0;
+}
+
+.effects__input:checked + label > .effects__preview {
+  border: 4px solid #ffe753;
+}
+
+.no-webp .effects__preview {
+  background-image: url("../img/preview-barsik.jpg"); }
+
+.effects__preview {
+  border: 4px solid transparent;
+  display: block;
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.effects__preview--chrome {
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+}
+
+.effects__preview--sepia {
+  -webkit-filter: sepia(1);
+          filter: sepia(1);
+}
+
 @media (max-width: 900px) {
-  .upload__form label {
+  .upload__file {
     font-size: 0;
   }
 
-  .upload__form label::after {
+  .upload__file::after {
     top: 50%;
     -webkit-transform: translate(-50%, -50%);
         -ms-transform: translate(-50%, -50%);
@@ -786,3 +832,5 @@ fieldset {
 }
 
 .webp .upload { background-image: url(../img/bg.webp); }
+
+.webp .effects__preview { background-image: url(../img/preview-barsik.webp); }

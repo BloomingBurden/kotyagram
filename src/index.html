@@ -8,9 +8,9 @@
     <h2 class="visually-hidden">Фотографии</h2>
     <form class="upload__form" action="http://localhost:3001/data" enctype="multipart/form-data" method="POST">
       <input class="upload__input visually-hidden" id="upload-file" type="file" name="filename" required>
-      <label for="upload-file">Загрузить</label>
+      <label class="upload__file" for="upload-file">Загрузить</label>
       
-      <div class="upload__overlay hidden">
+      <div class="upload__overlay">
         <div class="upload__wrapper">
           <div class="upload__img-container">
             <fieldset class="upload__scale scale">
@@ -19,9 +19,36 @@
               <button class="scale__button scale__button--more" type="button">Увеличить</button>
             </fieldset>
             <div class="upload__img-preview">
-              <img style="transform: scale(1)" src="" alt="Большая случайная картинка">
+              <img style="transform: scale(1)" src="@img/bg.png" alt="Большая случайная картинка">
             </div>
           </div>
+
+          <fieldset class="upload__list-effects effects">
+            <ul class="effects__list">
+              <li class="effects__item">
+                <input class="visually-hidden effects__input" type="radio" value="none" name="effects" id="effects-none" checked>
+                <label class="effects__label" for="effects-none">
+                  <span class="effects__preview effects__preview--none"></span>
+                  Оригинал
+                </label>
+              </li>
+              <li class="effects__item">
+                <input class="visually-hidden effects__input" type="radio" value="chrome" name="effects" id="effects-chrome">
+                <label class="effects__label" for="effects-chrome">
+                  <span class="effects__preview effects__preview--chrome"></span>
+                  Хром
+                </label>
+              </li>
+              <li class="effects__item">
+                <input class="visually-hidden effects__input" type="radio" value="sepia" name="effects" id="effects-sepia">
+                <label class="effects__label" for="effects-sepia">
+                  <span class="effects__preview effects__preview--sepia"></span>
+                  Сепия
+                </label>
+              </li>
+            </ul>
+          </fieldset>
+
           <button class="upload__send" type="submit">Опубликовать</button>
         </div>
       </div>
