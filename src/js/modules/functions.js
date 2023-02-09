@@ -25,5 +25,34 @@ const getHeight = () => {
     window.addEventListener('resize', setHeight);
 }
 
+
+// Свернуть модальное окно
+const collapseModal = () => {
+    const upload = document.querySelector('.upload');
+    const open = document.querySelector('.upload__open');
+    
+    const closeModal = () => {
+        upload.style.right = '-1000px';
+        open.textContent = 'Развернуть';
+    }
+
+    const openModal = () => {
+        upload.style.right = 0;
+        open.textContent = 'Свернуть';
+    }
+
+    window.addEventListener('DOMContentLoaded', closeModal);
+    open.addEventListener('click', (evt) => {
+        if (upload.classList.contains('upload--closed')) {
+            upload.classList.remove('upload--closed');
+            openModal();
+        } else {
+            upload.classList.add('upload--closed');
+            closeModal()
+        }
+    });
+}
+
 isWebp();
 getHeight();
+collapseModal();

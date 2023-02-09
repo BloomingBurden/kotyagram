@@ -1,4 +1,5 @@
 import { request } from "./fetch.js";
+import { closeModal } from "./utils.js";
 
 const form = document.querySelector('.upload__form');
 const input = form.querySelector('.upload__input');
@@ -66,11 +67,12 @@ buttonMore.addEventListener('click', () => {
 // ЗАГРУЗИТЬ ИЗОБРАЖЕНИЕ НА СЕРВЕР
 
 const onSuccess = (response) => {
-    console.log(response);
+    closeModal();
+    alert('Изображение загрузилось!');
 }
 
 const onError = (error) => {
-    console.log(error);
+    alert(`Ошибка: ${error}... Попробуйте позже!`);
 }
 
 form.addEventListener('submit', (evt) => {
@@ -82,5 +84,5 @@ form.addEventListener('submit', (evt) => {
     myForm.delete('filename');
     myForm = JSON.stringify(Object.fromEntries(myForm));
 
-    request(onSuccess, onError, 'POST', myForm);    
+    request(onSuccess, onError, 'POST', myForm);  
 })

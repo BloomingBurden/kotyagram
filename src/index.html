@@ -4,13 +4,13 @@
 })
 
 <main class="content">
-  <section class="upload">
+  <section class="upload upload--closed">
     <h2 class="visually-hidden">Фотографии</h2>
     <form class="upload__form" action="http://localhost:3001/data" enctype="multipart/form-data" method="POST">
       <input class="upload__input visually-hidden" id="upload-file" type="file" name="filename" required>
       <label class="upload__file" for="upload-file">Загрузить</label>
       
-      <div class="upload__overlay">
+      <div class="upload__overlay hidden">
         <div class="upload__wrapper">
           <div class="upload__img-container">
             <fieldset class="upload__scale scale">
@@ -19,7 +19,7 @@
               <button class="scale__button scale__button--more" type="button">Увеличить</button>
             </fieldset>
             <div class="upload__img-preview">
-              <img style="transform: scale(1)" src="@img/bg.png" alt="Большая случайная картинка">
+              <img style="transform: scale(1)" src="" alt="Большая случайная картинка">
             </div>
             
             <fieldset class="upload__tumbler tumbler hidden">
@@ -77,11 +77,17 @@
             </ul>
           </fieldset>
 
+          <fieldset class="upload__text text">
+            <input class="text__nickname" type="text" name="nickname" placeholder="Ваше имя" maxlength="20" required>
+            <textarea  class="text__descr" name="description" placeholder="Описание" cols="30" rows="10" maxlength="1500"></textarea>
+          </fieldset>
+
           <button class="upload__send" type="submit">Опубликовать</button>
         </div>
       </div>
     </form>
   </section>
+  <button class="upload__open" type="button">Развернуть</button>
 
   <section class="pictures">
     <div class="pictures__list">

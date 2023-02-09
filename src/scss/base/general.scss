@@ -40,6 +40,11 @@ body {
   justify-content: center;
   width: 100%;
   height: 100vh;
+  overflow: hidden;
+
+  @media (max-width: $tableW), (max-height: 500px) {
+    padding-top: 70px;
+  }
 }
 
 img {

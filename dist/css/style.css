@@ -468,6 +468,7 @@ body {
           justify-content: center;
   width: 100%;
   height: 100vh;
+  overflow: hidden;
 }
 
 img {
@@ -513,7 +514,7 @@ fieldset {
 }
 
 .no-webp .upload {
-  background-image: url("../img/bg.png"); }
+  background-image: url("../img/bg.png"), url("../img/bg-1.png"); }
 
 .upload {
   display: -webkit-box;
@@ -529,8 +530,29 @@ fieldset {
   z-index: 99;
   width: 40%;
   max-width: 480px;
+  border-radius: 40px;
+  -webkit-transition: all 1.5s ease;
+  -o-transition: all 1.5s ease;
+  transition: all 1.5s ease;
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+.upload__open {
+  padding: 0;
+  right: -60px;
+  position: absolute;
+  z-index: 9997;
+  width: 150px;
+  top: 45%;
+  -webkit-transform: translateY(-50%) rotate(-90deg);
+      -ms-transform: translateY(-50%) rotate(-90deg);
+          transform: translateY(-50%) rotate(-90deg);
+  height: 40px;
+  font-size: 20px;
+  background-color: #ffe753;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
 }
 
 .upload__form {
@@ -658,6 +680,32 @@ fieldset {
      object-position: center;
 }
 
+.upload__text {
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.upload__text * {
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 20px;
+}
+
+.upload__text *:focus {
+  outline: 3px solid rgba(255, 231, 83, 0.7);
+}
+
+.text__nickname {
+  width: 100%;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.text__descr {
+  width: 100%;
+  display: block;
+}
+
 .pictures {
   position: absolute;
   top: 0;
@@ -669,13 +717,13 @@ fieldset {
   position: absolute;
   left: 50%;
   top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%) scale(9);
+      -ms-transform: translate(-50%, -50%) scale(9);
+          transform: translate(-50%, -50%) scale(9);
   -webkit-column-width: 2em;
      -moz-column-width: 2em;
           column-width: 2em;
-  width: 20vw;
+  width: 13vw;
   gap: 10px;
 }
 
@@ -777,11 +825,14 @@ fieldset {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-bottom: 40px;
 }
 
 .effects__item {
   margin-right: 15px;
   text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
 }
 
 .effects__item:last-child {
@@ -801,6 +852,7 @@ fieldset {
   width: 70px;
   height: 70px;
   border-radius: 10px;
+  margin-bottom: 10px;
   cursor: pointer;
   background-color: #314359;
   background-repeat: no-repeat;
@@ -877,16 +929,24 @@ fieldset {
   border-radius: 5px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 900px), (max-height: 500px) {
   .upload__file {
     font-size: 0;
   }
+}
 
+@media (max-width: 900px) {
   .upload__file::after {
     top: 50%;
     -webkit-transform: translate(-50%, -50%);
         -ms-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
+  }
+}
+
+@media (max-width: 768px), (max-height: 500px) {
+  .content {
+    padding-top: 70px;
   }
 }
 
@@ -896,6 +956,12 @@ fieldset {
   }
 }
 
-.webp .upload { background-image: url(../img/bg.webp); }
+@media (max-height: 500px) {
+  .upload {
+    width: 20%;
+  }
+}
+
+.webp .upload { background-image: url(../img/bg.webp), url(../img/bg-1.webp); }
 
 .webp .effects__preview { background-image: url(../img/preview-barsik.webp); }

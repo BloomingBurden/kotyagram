@@ -2,11 +2,14 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-bottom: 40px;
 }
 
 .effects__item {
   margin-right: 15px;
   text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
 
   &:last-child {
     margin-right: 0;
@@ -23,8 +26,9 @@
   width: 70px;
   height: 70px;
   border-radius: 10px;
+  margin-bottom: 10px;
   cursor: pointer;
-
+  
   background-color: #314359;
   background-image: url('@img/preview-barsik.jpg');
   background-repeat: no-repeat;
