@@ -34,15 +34,27 @@ const effects = {
 // ЗАДАТЬ ЭФФЕКТ НА ФОТО
 let currentValue = SliderValue.MAX;
 let nameOfEffect;
-let procent = 4.53;
+let procent = 4.58;
 
 const getProcent = () => {
-    procent = tumblerSlider.offsetWidth / 100;
+    procent = tumbler.clientWidth / 100;
+}
+
+const resetStyle = () => {
+    tumblerBtn.style.left = 'calc(100% - 10px)';
+    tumblerLineMove(SliderValue.MAX);
+    currentValue = SliderValue.MAX;
 }
 
 const setValueEffect = () => {
     imgPreview.style.filter = effects[nameOfEffect]();
 }
+
+const tumblerLineMove = (value) => {
+    tumblerSlider.value = `${value}%`;
+    tumblerSlider.style.width = `${value}%`;
+};
+
 
 const showTumbler = (evt) => {
     const target = evt.target.closest('.effects__preview');
@@ -57,7 +69,8 @@ const showTumbler = (evt) => {
         getProcent();
         window.addEventListener('resize', getProcent);
     }
-
+    
+    resetStyle();
     nameOfEffect = target.className.slice(target.className.indexOf('--') + 2);
     setValueEffect();
 }
@@ -65,6 +78,7 @@ const showTumbler = (evt) => {
 effectsList.addEventListener('click', showTumbler);
 
 // РЕГУЛИРОВКА ЭФФЕКТА НА ФОТО
+
 tumblerBtn.addEventListener('pointerdown', (evt) => {
     evt.preventDefault();
 
@@ -74,25 +88,26 @@ tumblerBtn.addEventListener('pointerdown', (evt) => {
         const tumblerWidth = tumblerBtn.offsetWidth / 2;
         currentValue = Math.round( value / procent);
 
-        if (currentValue >= 100) {
-            currentValue = 100;
+        if (currentValue >= SliderValue.MAX) {
+            currentValue = SliderValue.MAX;
             return;
         }
-        if (currentValue <= 0) {
-            currentValue = 0;
+        if (currentValue < SliderValue.MIN) {
+            currentValue = SliderValue.MIN;
             return;
         }
         
         tumblerBtn.style.left = `calc(${currentValue}% - ${tumblerWidth}px)`;
-
+        tumblerLineMove(currentValue);
         setValueEffect();
     }
 
     const clearElem = (evt) => {
         document.removeEventListener('pointermove', moveElem);
+        document.removeEventListener('pointerup', clearElem);
     };
 
-    tumblerBtn.addEventListener('pointerup', clearElem);
+    document.addEventListener('pointerup', clearElem);
     document.addEventListener('pointermove', moveElem);
 });
 

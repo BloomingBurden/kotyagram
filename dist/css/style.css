@@ -842,13 +842,13 @@ fieldset {
           transform: translateX(-50%);
   height: 37px;
   width: 80%;
+  border: 6px solid rgba(0, 0, 0, 0.6);
+  border-radius: 20px;
+  background-color: #ffffff;
 }
 
 .tumbler__wrapper {
   position: relative;
-  background-color: #ffffff;
-  border: 6px solid rgba(0, 0, 0, 0.6);
-  border-radius: 20px;
 }
 
 .tumbler__line {
