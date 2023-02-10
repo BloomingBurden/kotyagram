@@ -540,7 +540,7 @@ fieldset {
 
 .upload__open {
   padding: 0;
-  right: -60px;
+  right: -55px;
   position: absolute;
   z-index: 9997;
   width: 150px;
@@ -709,6 +709,7 @@ fieldset {
 .pictures {
   position: absolute;
   top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
 }
@@ -717,22 +718,37 @@ fieldset {
   position: absolute;
   left: 50%;
   top: 50%;
-  -webkit-transform: translate(-50%, -50%) scale(9);
-      -ms-transform: translate(-50%, -50%) scale(9);
-          transform: translate(-50%, -50%) scale(9);
+  -webkit-transform: scale(9);
+      -ms-transform: scale(9);
+          transform: scale(9);
   -webkit-column-width: 2em;
      -moz-column-width: 2em;
           column-width: 2em;
   width: 13vw;
-  gap: 10px;
+  gap: 8px;
 }
 
 .pictures__item {
-  display: block;
-  margin-bottom: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 5px;
+  max-width: 40px;
+  max-height: 90px;
   -webkit-transform: scale(1.001);
       -ms-transform: scale(1.001);
           transform: scale(1.001);
+  -webkit-box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.4);
+          box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.4);
+}
+
+.pictures__item:nth-child(2n) {
+  margin-bottom: 8px;
+}
+
+.pictures__item:nth-child(2n) img {
+  -webkit-box-shadow: 2px 2px 1px 0px rgba(0, 0, 0, 0.6);
+          box-shadow: 2px 2px 1px 0px rgba(0, 0, 0, 0.6);
 }
 
 .pictures__item img {

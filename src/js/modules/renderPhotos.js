@@ -1,3 +1,5 @@
+import { parallax } from './parallax.js';
+
 const pictures = document.querySelector('.pictures__list');
 const picture = document.querySelector('#picture').content.querySelector('.pictures__item');
 
@@ -12,6 +14,7 @@ const renderPhotos = (data) => {
     })
     
     pictures.append(template);
+    parallax();
 };
 
 export { renderPhotos };

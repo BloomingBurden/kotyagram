@@ -1,6 +1,7 @@
 .pictures {
   position: absolute;
   top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
 }
@@ -9,17 +10,28 @@
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%) scale(9);
+  transform: scale(9);
   column-width: 2em;
   width: 13vw; 
-  gap: 10px;
+  gap: 8px;
 }
 
 
 .pictures__item {
-  display: block;
-  margin-bottom: 10px;
+  display: flex;
+  margin-bottom: 5px;
+  max-width: 40px;
+  max-height: 90px;
   transform: scale(1.001);
+  box-shadow: 1px 1px 1px 0px rgba(0,0,0,.4);
+
+  &:nth-child(2n) {
+    margin-bottom: 8px;
+  }
+
+  &:nth-child(2n) img {
+    box-shadow: 2px 2px 1px 0px rgba(0,0,0,.6);
+  }
 }
 
 .pictures__item img {

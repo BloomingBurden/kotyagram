@@ -32,22 +32,24 @@ const collapseModal = () => {
     const open = document.querySelector('.upload__open');
     
     const closeModal = () => {
-        upload.style.right = '-1000px';
+        upload.classList.add('upload--closed');
+        upload.style.right = `-${window.innerWidth}px`;
         open.textContent = 'Развернуть';
     }
 
     const openModal = () => {
+        upload.classList.remove('upload--closed');
         upload.style.right = 0;
         open.textContent = 'Свернуть';
     }
 
     window.addEventListener('DOMContentLoaded', closeModal);
+    window.addEventListener('resize', closeModal);
+    
     open.addEventListener('click', (evt) => {
         if (upload.classList.contains('upload--closed')) {
-            upload.classList.remove('upload--closed');
             openModal();
         } else {
-            upload.classList.add('upload--closed');
             closeModal()
         }
     });
