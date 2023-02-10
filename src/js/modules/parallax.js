@@ -1,55 +1,35 @@
 const pictureList = document.querySelector('.pictures__list');
 const picture = document.querySelector('.pictures');
-const coord = {
-    left: 0,
-    top: 0,
-};
+let posX = 0;
+let posY = 0;
+let lastPosX = 0;
+let lastPosY = 0;
 
-let shiftX;
-let shiftY;
+const SPEED = 0.005;
 
 const moveParallax = () => {
-    pictureList.style.cssText = `transform: translate(${coord.left}px, ${coord.top}px) scale(9)`;
+    let shiftX = posX - lastPosX;
+    let shiftY = posY - lastPosY;
+
+    lastPosX = lastPosX + (shiftX * SPEED);
+    lastPosY = lastPosY + (shiftY * SPEED);
+
+    pictureList.style.cssText = `transform: translate(${lastPosX}px, ${lastPosY}px) scale(9)`;
 
     requestAnimationFrame(moveParallax);
 }
 moveParallax();
 
 const startParallax = (evt) => {
-    const BASE_VALUE = 1;
-    const MAX_VALUE = 20;
+    const coords = {
+        left: Math.abs(pictureList.getBoundingClientRect().left),
+        top: Math.abs(pictureList.getBoundingClientRect().top),
+    };
 
-    if (shiftX < evt.pageX) {
-        coord.left += BASE_VALUE;
-
-        if (coord.left >= MAX_VALUE) {
-            coord.left = MAX_VALUE;
-        }
-    }
-    if (shiftX > evt.pageX) {
-        coord.left -= BASE_VALUE;
-
-        if (coord.left <= -MAX_VALUE) {
-            coord.left = -MAX_VALUE;
-        }
-    }
-    if (shiftY < evt.pageY) {
-        coord.top += BASE_VALUE;
-
-        if (coord.top >= MAX_VALUE) {
-            coord.top = MAX_VALUE;
-        }
-    }
-    if (shiftY > evt.pageY) {
-        coord.top -= BASE_VALUE;
-
-        if (coord.top <= -MAX_VALUE) {
-            coord.top = -MAX_VALUE;
-        }
-    }
-
-    shiftX = evt.pageX;
-    shiftY = evt.pageY;
+    const blockX =  coords.left + window.innerWidth / 2;
+    const blockY = coords.top + window.innerHeight / 2;
+    posX = evt.pageX + coords.left - blockX;
+    posY = evt.pageY +  coords.top - blockY;
 }
 
 const checkWindowWidth = () => {

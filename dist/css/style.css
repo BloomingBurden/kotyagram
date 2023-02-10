@@ -726,6 +726,7 @@ fieldset {
           column-width: 2em;
   width: 13vw;
   gap: 8px;
+  will-change: transform;
 }
 
 .pictures__item {
