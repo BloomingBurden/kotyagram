@@ -12,13 +12,25 @@ const coords = {
     right: pictureList.getBoundingClientRect().right - window.innerWidth,
 };
 
-const SPEED = 0.005;
+const SPEED = 0.05;
 
 const checkBorder = () => {
-    if (coords.left >= 0) lastPosX = 0;
-    if (coords.top >= 0) lastPosY = 140;
-    if (coords.bottom <= 0) lastPosY = 200;
-    if (coords.right <= 0) lastPosX = -100;
+    if (coords.left >= 0) {
+        lastPosX = 0;
+        posX = posX - 2;
+    }
+    if (coords.top >= 0) {
+        lastPosY = lastPosY - 20;
+        posY = posY - 2;
+    }
+    if (coords.bottom <= 0)  {
+        lastPosY = lastPosY + 20;
+        posY = posY + 2;
+    }
+    if (coords.right <= 0) {
+        lastPosX = lastPosX + 20;
+        posX = posX + 2;
+    }
 }
 
 const moveParallax = () => {
@@ -27,14 +39,12 @@ const moveParallax = () => {
     coords.right = pictureList.getBoundingClientRect().right - window.innerWidth;
     coords.bottom = pictureList.getBoundingClientRect().bottom - window.innerHeight;
 
-    let shiftX = posX - lastPosX;
-    let shiftY = posY - lastPosY;
+    console.log(posY)
 
-    lastPosX = lastPosX + (shiftX * SPEED);
-    lastPosY = lastPosY + (shiftY * SPEED);
+    lastPosX = lastPosX + (posX * SPEED);
+    lastPosY = lastPosY + (posY * SPEED);
 
     checkBorder();
-
     pictureList.style.cssText = `transform: translate(${lastPosX}px, ${lastPosY}px) scale(9)`;
     
     requestAnimationFrame(moveParallax);
@@ -52,21 +62,17 @@ const startParallax = (evt) => {
     posY = evt.pageY + top - blockY;
 }
 
-const checkWindowWidth = () => {
-    if (window.innerWidth >= 768) {
-        picture.addEventListener('pointermove', startParallax);
-    } else {
-        picture.removeEventListener('pointermove', startParallax);
-    }
-};
-
 const parallax = () => {
     picture.ondragstart = () => false;
 
-    window.addEventListener('resize', () => {
-        checkWindowWidth();
-    })
-    checkWindowWidth();
+    picture.addEventListener('pointerdown', (evt) => {
+        picture.addEventListener('pointermove', startParallax);
+        picture.addEventListener('pointerup', () => {
+            
+            picture.removeEventListener('pointermove', startParallax);
+            picture.onpointup = null;
+        })
+    });
 };
 
 

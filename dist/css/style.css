@@ -716,9 +716,10 @@ fieldset {
 
 .pictures__list {
   position: absolute;
-  -webkit-transition: 0.3s all ease;
-  -o-transition: 0.3s all ease;
-  transition: 0.3s all ease;
+  -webkit-transition: 0.5s all;
+  -o-transition: 0.5s all;
+  transition: 0.5s all;
+  top: 50%;
   left: 50%;
   -webkit-transform: scale(9);
       -ms-transform: scale(9);
