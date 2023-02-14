@@ -9,25 +9,27 @@ const SliderValue = {
     MIN: 1,
 };
 
-const effects = {
-    none: () => {
-        return 'none';
-    },
-    chrome: () => {
-        return `grayscale(${0.01 * currentValue})`;
-    },
-    sepia: () => {
-        return `sepia(${0.01 * currentValue})`;
-    },
-    marvin: () => {
-        return `invert(${currentValue}%)`;
-    },
-    phobos: () => {
-        return `blur(${0.03 * currentValue}px)`;
-    },
-    heat: () => {
-        return `brightness(${0.03 * currentValue})`;
-    },
+const effects = (value = currentValue) => {
+    return {
+        none: () => {
+            return 'none';
+        },
+        chrome: () => {
+            return `grayscale(${0.01 * value})`;
+        },
+        sepia: () => {
+            return `sepia(${0.01 * value})`;
+        },
+        marvin: () => {
+            return `invert(${value}%)`;
+        },
+        phobos: () => {
+            return `blur(${0.03 * value}px)`;
+        },
+        heat: () => {
+            return `brightness(${0.03 * value})`;
+        },
+    }
 };
 
 
@@ -47,7 +49,8 @@ const resetStyle = () => {
 }
 
 const setValueEffect = () => {
-    imgPreview.style.filter = effects[nameOfEffect]();
+    console.log(effects(currentValue)[nameOfEffect]);
+    imgPreview.style.filter = effects(currentValue)[nameOfEffect]();
 }
 
 const tumblerLineMove = (value) => {
@@ -111,3 +114,4 @@ tumblerBtn.addEventListener('pointerdown', (evt) => {
     document.addEventListener('pointermove', moveElem);
 });
 
+export { effects }

@@ -30,10 +30,12 @@ const getHeight = () => {
 const collapseModal = () => {
     const upload = document.querySelector('.upload');
     const open = document.querySelector('.upload__open');
+    const uploadOverlay = document.querySelector('.upload__overlay');
     
     const closeModal = () => {
         upload.classList.add('upload--closed');
         upload.style.right = `-${window.innerWidth}px`;
+        uploadOverlay.classList.add('hidden');
         open.textContent = 'Развернуть';
     }
 

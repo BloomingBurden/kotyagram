@@ -454,7 +454,7 @@ body {
   font-weight: 400;
   position: relative;
   overflow: hidden;
-  word-break: break-all;
+  word-break: break-word;
   background-color: #252525;
 }
 
@@ -604,7 +604,8 @@ fieldset {
           transform: scale(1.1);
 }
 
-.upload__overlay {
+.upload__overlay,
+.big-picture {
   position: fixed;
   left: 0;
   top: 0;
@@ -618,7 +619,8 @@ fieldset {
   z-index: 999;
 }
 
-.upload__wrapper {
+.upload__wrapper,
+.big-picture__wrapper {
   margin: 0 auto;
   max-width: 600px;
   width: 100%;
@@ -716,9 +718,9 @@ fieldset {
 
 .pictures__list {
   position: absolute;
-  -webkit-transition: 0.5s all;
-  -o-transition: 0.5s all;
-  transition: 0.5s all;
+  -webkit-transition: 0.3s all;
+  -o-transition: 0.3s all;
+  transition: 0.3s all;
   top: 50%;
   left: 50%;
   -webkit-transform: scale(9);
@@ -733,6 +735,10 @@ fieldset {
 }
 
 .pictures__item {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -958,6 +964,148 @@ fieldset {
   border-radius: 5px;
 }
 
+.big-picture__wrapper {
+  position: relative;
+  background-color: #ffffff;
+  color: #2e2e2e;
+}
+
+.big-picture__img {
+  width: 100%;
+}
+
+.big-picture__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px 20px 20px 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.big-picture__author {
+  width: 80%;
+  margin-right: 20px;
+}
+
+.big-picture__likes {
+  width: 20%;
+  text-align: right;
+  line-height: 1;
+}
+
+.big-picture__likes span {
+  -webkit-transition: 0.3s all;
+  -o-transition: 0.3s all;
+  transition: 0.3s all;
+  opacity: 0.5;
+  color: #e90000;
+  padding-left: 25px;
+  margin-left: 5px;
+  cursor: pointer;
+  background-image: url("../img/icons/icons.svg#heart");
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 20px;
+}
+
+.big-picture__likes span:hover {
+  opacity: 1;
+}
+
+.big-picture__name {
+  margin: 0;
+  margin-bottom: 0;
+}
+
+.big-picture__descr {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.big-picture__body {
+  padding: 0 40px;
+  word-break: normal;
+  word-break: break-word;
+}
+
+.big-picture__item {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.big-picture__message {
+  padding: 20px 0;
+  position: relative;
+}
+
+.big-picture__message input {
+  width: 100%;
+  padding: 5px 40px 5px 10px;
+}
+
+.big-picture__message input:focus {
+  outline: 1px solid #ffe753;
+}
+
+.big-picture__send {
+  -webkit-transition: 0.3s all;
+  -o-transition: 0.3s all;
+  transition: 0.3s all;
+  position: absolute;
+  right: 1px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  background-color: #e6e6e6;
+  font-size: 0;
+  background-image: url("../img/icons/icons.svg#send");
+  opacity: 0.6;
+}
+
+.big-picture__send:hover {
+  opacity: 1;
+}
+
+.big-picture__close {
+  position: absolute;
+  font-size: 0;
+  right: -50px;
+  top: 10px;
+  width: 35px;
+  height: 35px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.big-picture__close::after,
+.big-picture__close::before {
+  content: "";
+  position: absolute;
+  left: 7px;
+  width: 60%;
+  height: 2px;
+  background-color: #ffffff;
+}
+
+.big-picture__close::after {
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.big-picture__close::before {
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
 @media (max-width: 900px), (max-height: 500px) {
   .upload__file {
     font-size: 0;
@@ -982,6 +1130,21 @@ fieldset {
 @media (max-width: 768px) {
   .upload {
     width: 50%;
+  }
+}
+
+@media (max-width: 570px) {
+  .pictures__list {
+    -webkit-column-count: 1;
+       -moz-column-count: 1;
+            column-count: 1;
+    width: auto;
+  }
+}
+
+@media (max-width: 400px) {
+  .pictures__list {
+    left: 45%;
   }
 }
 

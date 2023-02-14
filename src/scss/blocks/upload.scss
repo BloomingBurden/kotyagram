@@ -91,7 +91,8 @@
   }
 }
 
-.upload__overlay {
+.upload__overlay,
+.big-picture {
   position: fixed;
   left: 0;
   top: 0;
@@ -105,7 +106,8 @@
   z-index: 999;
 }
 
-.upload__wrapper {
+.upload__wrapper, 
+.big-picture__wrapper {
   margin: 0 auto;
   max-width: 600px;
   width: 100%;

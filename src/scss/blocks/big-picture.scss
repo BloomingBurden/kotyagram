@@ -1,0 +1,130 @@
+.big-picture__wrapper {
+  position: relative;
+  background-color: $textcolor;
+  color: #2e2e2e;
+}
+
+.big-picture__img {
+  width: 100%;
+}
+
+.big-picture__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px 20px 20px;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+.big-picture__author {
+  width: 80%;
+  margin-right: 20px;
+}
+
+.big-picture__likes {
+  width: 20%;
+  text-align: right;
+  line-height: 1;
+
+  
+  span {
+    transition: 0.3s all;
+    opacity: 0.5;
+    color: #e90000;
+    padding-left: 25px;
+    margin-left: 5px;
+    cursor: pointer;
+    background-image: url('@img/icons/icons.svg#heart');
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 20px;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.big-picture__name {
+  margin: 0;
+  margin-bottom: 0;
+}
+
+.big-picture__descr {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.big-picture__body {
+  padding: 0 40px;
+  word-break: normal;
+  word-break: break-word;
+}
+
+.big-picture__item {
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+
+.big-picture__message {
+  padding: 20px 0;
+  position: relative;
+
+  input {
+    width: 100%;
+    padding: 5px 40px 5px 10px;
+    
+    &:focus {
+      outline: 1px solid $accent;
+    }
+  }
+}
+
+.big-picture__send {
+  transition: 0.3s all;
+  position: absolute;
+  right: 1px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  
+  background-color: #e6e6e6;
+  font-size: 0;
+  background-image: url('@img/icons/icons.svg#send');
+  opacity: 0.6;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.big-picture__close {
+  position: absolute;
+  font-size: 0;
+  right: -50px;
+  top: 10px;
+  width: 35px;
+  height: 35px;
+  background-color: rgba(255,255,255,.2);
+
+  &::after,
+  &::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    width: 60%;
+    height: 2px;
+    
+    background-color: #ffffff;
+  }
+
+  &::after {
+    transform: rotate(45deg);
+  }
+
+  &::before {
+    transform: rotate(-45deg);
+  }
+
+}

@@ -12,24 +12,27 @@ const coords = {
     right: pictureList.getBoundingClientRect().right - window.innerWidth,
 };
 
-const SPEED = 0.05;
+const SPEED = 0.01;
 
 const checkBorder = () => {
-    if (coords.left >= 0) {
-        lastPosX = 0;
-        posX = posX - 2;
+    const STEP_BORDER = 20;
+    const STEP_MOUSE = 20;
+
+    if (coords.left >= 30) {
+        lastPosX = 30;
+        posX = posX - STEP_MOUSE;
     }
-    if (coords.top >= 0) {
-        lastPosY = lastPosY - 20;
-        posY = posY - 2;
+    if (coords.top >= 30) {
+        lastPosY = lastPosY - STEP_BORDER;
+        posY = posY - STEP_MOUSE;
     }
-    if (coords.bottom <= 0)  {
-        lastPosY = lastPosY + 20;
-        posY = posY + 2;
+    if (coords.bottom <= -30)  {
+        lastPosY = lastPosY + STEP_BORDER;
+        posY = posY + STEP_MOUSE;
     }
-    if (coords.right <= 0) {
-        lastPosX = lastPosX + 20;
-        posX = posX + 2;
+    if (coords.right <= -30) {
+        lastPosX = lastPosX + STEP_BORDER;
+        posX = posX + STEP_MOUSE;
     }
 }
 
@@ -39,12 +42,14 @@ const moveParallax = () => {
     coords.right = pictureList.getBoundingClientRect().right - window.innerWidth;
     coords.bottom = pictureList.getBoundingClientRect().bottom - window.innerHeight;
 
-    console.log(posY)
-
     lastPosX = lastPosX + (posX * SPEED);
     lastPosY = lastPosY + (posY * SPEED);
 
     checkBorder();
+
+    if (window.innerWidth <= 570) {
+        lastPosX = 0;
+    }
     pictureList.style.cssText = `transform: translate(${lastPosX}px, ${lastPosY}px) scale(9)`;
     
     requestAnimationFrame(moveParallax);
