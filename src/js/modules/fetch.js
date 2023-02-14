@@ -1,7 +1,7 @@
 const URL = 'http://localhost:3001/data';
 
-const request = (onSuccess, onError, method, data) => {
-    fetch(URL, {
+const request = (onSuccess, onError, method, data, id) => {
+    fetch(method === 'PUT' ? `${URL}/${id}` : URL, {
         method: method,
         headers: {
             'Accept': 'application/json',

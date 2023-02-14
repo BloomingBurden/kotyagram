@@ -7,6 +7,7 @@ import './modules/effects.js';
 let photos = [];
 
 const onSuccess = (data) => {
+    load.classList.add('hidden');
     photos = data.slice();
     renderPhotos(photos);
 };

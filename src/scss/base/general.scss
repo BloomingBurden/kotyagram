@@ -87,3 +87,17 @@ fieldset {
   border: none;
   padding: 0;
 }
+
+#load {
+  z-index: 9999;
+  position: absolute;
+  background-color: #000000;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+
+  background-image: url('@img/load-loading.gif');
+  background-repeat: no-repeat;
+  background-position: center;
+}

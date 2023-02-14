@@ -49,7 +49,6 @@ const resetStyle = () => {
 }
 
 const setValueEffect = () => {
-    console.log(effects(currentValue)[nameOfEffect]);
     imgPreview.style.filter = effects(currentValue)[nameOfEffect]();
 }
 

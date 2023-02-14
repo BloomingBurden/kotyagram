@@ -81,8 +81,14 @@ form.addEventListener('submit', (evt) => {
     let myForm = new FormData(form);
 
     myForm.append('img', imgName);
+    myForm.append('likes', 0);
     myForm.delete('filename');
-    myForm = JSON.stringify(Object.fromEntries(myForm));
+
+    const formObj = Object.fromEntries(myForm);
+
+    formObj.comments = [];
+
+    myForm = JSON.stringify(formObj);
 
     request(onSuccess, onError, 'POST', myForm);  
 })
