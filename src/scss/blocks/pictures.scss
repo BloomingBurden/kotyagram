@@ -8,8 +8,8 @@
 
 .pictures__list {
   position: absolute;
+  transition: 0.3s all ease;
   left: 50%;
-  top: 50%;
   transform: scale(9);
   column-width: 2em;
   width: 13vw; 
@@ -25,13 +25,18 @@
   max-height: 90px;
   transform: scale(1.001);
   box-shadow: 1px 1px 1px 0px rgba(0,0,0,.4);
+  transition: 1s all ease;
 
   &:nth-child(2n) {
     margin-bottom: 8px;
   }
 
   &:nth-child(2n) img {
-    box-shadow: 2px 2px 1px 0px rgba(0,0,0,.6);
+    box-shadow: 2px 2px 1px 1px rgba(0,0,0,.6);
+  }
+
+  &:hover {
+    transform: scale(1.1);
   }
 }
 

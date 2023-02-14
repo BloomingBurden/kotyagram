@@ -716,8 +716,10 @@ fieldset {
 
 .pictures__list {
   position: absolute;
+  -webkit-transition: 0.3s all ease;
+  -o-transition: 0.3s all ease;
+  transition: 0.3s all ease;
   left: 50%;
-  top: 50%;
   -webkit-transform: scale(9);
       -ms-transform: scale(9);
           transform: scale(9);
@@ -741,6 +743,9 @@ fieldset {
           transform: scale(1.001);
   -webkit-box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.4);
           box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.4);
+  -webkit-transition: 1s all ease;
+  -o-transition: 1s all ease;
+  transition: 1s all ease;
 }
 
 .pictures__item:nth-child(2n) {
@@ -748,8 +753,14 @@ fieldset {
 }
 
 .pictures__item:nth-child(2n) img {
-  -webkit-box-shadow: 2px 2px 1px 0px rgba(0, 0, 0, 0.6);
-          box-shadow: 2px 2px 1px 0px rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.6);
+          box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.6);
+}
+
+.pictures__item:hover {
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .pictures__item img {
