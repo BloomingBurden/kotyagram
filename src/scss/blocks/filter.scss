@@ -1,0 +1,57 @@
+.filter {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 600px;
+  z-index: 90;
+}
+
+.filter__list {
+  padding: 10px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.filter__item {
+  margin-right: 20px;
+
+  &--active {
+    background-color: $textcolor;
+    
+    .filter__link {
+      color: red;
+    }
+  }
+}
+
+.filter__link {
+  display: block;
+  padding: 5px 10px;
+  color: $textcolor;
+  text-decoration: none;
+  font-size: 20px;
+  text-transform: uppercase;
+  transition: 0.3s all;
+
+  &:hover,
+  &:focus {
+    background-color: rgba(255,255,255,.1);
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+
+  @media (max-width: $tableW) {
+    font-size: 15px;
+    padding: 5px;
+    font-weight: 700;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 14px;
+  }
+}

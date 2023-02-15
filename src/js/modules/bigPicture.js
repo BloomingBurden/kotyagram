@@ -14,7 +14,7 @@ const close = document.querySelector('.big-picture__close');
 const DATA = {
     like: 0,
     comments: [],
-    avatar: '',
+    avatar: 'img/icons/icons.svg#avatar_(11)',
 }
 
 let bindExitModal;
@@ -26,7 +26,8 @@ const renderComments = (comments) => {
     comments.forEach(item => {
         const li = commentItem.cloneNode(true);
 
-        li.querySelector('.big-picture__text').textContent = item;
+        li.querySelector('.big-picture__text').textContent = item.text;
+        li.querySelector('.big-picture__avatar').src = item.avatar;
         elements.append(li);
     })
 
@@ -42,8 +43,12 @@ const sendComment = () => {
         setTimeout(() => comment.removeAttribute('style'), 3000);
     } else {
         clone.querySelector('.big-picture__text').textContent = comment.value;
-        DATA.comments.push(comment.value);
+        clone.querySelector('.big-picture__avatar').src = DATA.avatar;
+        
         commentList.append(clone);
+        
+        DATA.comments.push({avatar: DATA.avatar, text: comment.value});
+        comment.value = '';
     }
 
 }
@@ -68,7 +73,8 @@ const setAvatar = () => {
 
         if (count > 26) count = 1;
 
-        target.src = `img/icons/icons.svg#avatar_(${count})`;
+        DATA.avatar = `img/icons/icons.svg#avatar_(${count})`;
+        target.src = DATA.avatar;
     }
 }
 
@@ -92,6 +98,7 @@ const onError = (error) => {
 const exitModal = (picture) => {
     picture.comments = [...picture.comments, ...DATA.comments];
     picture.likes = +picture.likes + DATA.like;
+
     load.classList.remove('hidden');
 
     likes.removeEventListener('click', bindOnLikes);
@@ -119,7 +126,6 @@ const show = (picture, filter) => {
     commentSend.addEventListener('click', sendComment);
 
     let getAvatar = setAvatar();
-
     avatarImg.addEventListener('click', getAvatar);
     close.addEventListener('click', bindExitModal);
 };

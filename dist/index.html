@@ -15,6 +15,22 @@
 <body class=index-body>
 
   <main class="content">
+    <section class="filter">
+      <h2 class="visually-hidden">Фильтр</h2>
+
+      <ul class="filter__list">
+        <li class="filter__item filter__item--active" data-filter="none">
+          <a href="#" class="filter__link">По умолчанию</a>
+        </li>
+        <li class="filter__item" data-filter="likes">
+          <a href="#" class="filter__link">По лайкам</a>
+        </li>
+        <li class="filter__item" data-filter="popular">
+          <a href="#" class="filter__link">По популярности</a>
+        </li>
+      </ul>
+    </section>
+
     <section class="upload upload--closed">
       <h2 class="visually-hidden">Фотографии</h2>
       <form class="upload__form" action="http://localhost:3001/data" enctype="multipart/form-data" method="POST">
@@ -121,12 +137,6 @@
           <span class="big-picture__likes">Нравится <span></span></span>
         </header>
         <div class="big-picture__body">
-          <p class="big-picture__quantity">
-            <span class="big-picture__from-quantity"></span>
-            из
-            <span class="big-picture__to-quantity"></span>
-            комментариев
-          </p>
 
           <ul class="big-picture__comments">
 
@@ -147,6 +157,8 @@
   <template id="picture">
     <a href="#" class="pictures__item">
       <img src="" alt="Случайная фотография" class="picture__img">
+      <p class="pictures__info"><span class="pictures__comments">0</span><span class="pictures__likes">0</span>
+      </p>
     </a>
   </template>
 

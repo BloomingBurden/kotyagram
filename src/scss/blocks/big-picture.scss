@@ -15,6 +15,7 @@
 
 .big-picture__header {
   width: 100%;
+  margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -31,12 +32,25 @@
   align-items: center;
   width: 80%;
   margin-right: 20px;
+
+  @media (max-width: $tableW) {
+    width: 60%;
+  }
 }
 
 .big-picture__likes {
   width: 20%;
   text-align: right;
   line-height: 1;
+
+  @media (max-width: $tableW) {
+    width: 40%;
+  }
+
+  @media (max-width: 450px) {
+    text-align: center;
+    line-height: 1.2;
+  }
 
   
   span {
@@ -73,6 +87,10 @@
   padding: 0 40px;
   word-break: normal;
   word-break: break-word;
+
+  @media (max-width: $tableW) {
+    padding: 0 20px;
+  }
 }
 
 .big-picture__item {
@@ -156,6 +174,12 @@
 
   &::before {
     transform: rotate(-45deg);
+  }
+
+  @media (max-width: $tableW) {
+    right: 0;
+    background-color: rgba(0,0,0,.5);
+    top: 0;
   }
 }
 

@@ -1,4 +1,3 @@
-import { parallax } from './parallax.js';
 import { effects } from './effects.js';
 import { show } from './bigPicture.js';
 
@@ -26,12 +25,11 @@ const renderPhoto = (photo) => {
 const renderPhotos = (data) => {
     const template = document.createDocumentFragment();
 
-    data.forEach((item, i) => {
+    data.forEach((item) => {
         template.append(renderPhoto(item));
     })
     
     pictures.append(template);
-    parallax();
 };
 
 export { renderPhotos };

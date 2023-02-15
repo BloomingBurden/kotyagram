@@ -68,7 +68,7 @@ buttonMore.addEventListener('click', () => {
 
 const onSuccess = (response) => {
     closeModal();
-    alert('Изображение загрузилось!');
+    location.reload();
 }
 
 const onError = (error) => {

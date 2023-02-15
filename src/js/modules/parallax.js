@@ -80,5 +80,4 @@ const parallax = () => {
     });
 };
 
-
-export { parallax }
+parallax();
