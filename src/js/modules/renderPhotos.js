@@ -14,6 +14,9 @@ const renderPhoto = (photo) => {
         filter: ${filter};
         transform: scale(${parseFloat(photo.scale) / 100})`;
     
+    cloneElement.querySelector('.pictures__comments').textContent = photo.comments.length;
+    cloneElement.querySelector('.pictures__likes').textContent = photo.likes;
+
     cloneElement.addEventListener('click', (evt) => {
         evt.preventDefault();
         show(photo, filter);

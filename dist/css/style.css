@@ -872,9 +872,9 @@ fieldset {
   font-size: 0;
   width: 33px;
   height: 33px;
-  -webkit-transition: 0.3 all ease;
-  -o-transition: 0.3 all ease;
-  transition: 0.3 all ease;
+  -webkit-transition: 0.3s all ease;
+  -o-transition: 0.3s all ease;
+  transition: 0.3s all ease;
   color: #ffffff;
   background-color: rgba(0, 0, 0, 0.6);
 }
@@ -1314,6 +1314,10 @@ fieldset {
     width: 50%;
   }
 
+  .pictures__list {
+    gap: 6px;
+  }
+
   .big-picture__author {
     width: 60%;
   }
@@ -1345,6 +1349,21 @@ fieldset {
        -moz-column-count: 1;
             column-count: 1;
     width: auto;
+    gap: 5px;
+  }
+}
+
+@media (max-width: 500px) {
+  .big-picture__author {
+    display: block;
+  }
+
+  .big-picture__author span {
+    display: none;
+  }
+
+  .big-picture__descr {
+    padding-left: 0;
   }
 }
 

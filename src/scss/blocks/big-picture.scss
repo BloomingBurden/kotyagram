@@ -36,6 +36,14 @@
   @media (max-width: $tableW) {
     width: 60%;
   }
+
+  @media (max-width: 500px) {
+    display: block;
+
+    span {
+      display: none;
+    }
+  }
 }
 
 .big-picture__likes {
@@ -81,7 +89,10 @@
 .big-picture__descr {
   margin: 0;
   padding-left: 10px;
-}
+  @media (max-width: 500px) {
+    padding-left: 0;  
+  }
+} 
 
 .big-picture__body {
   padding: 0 40px;

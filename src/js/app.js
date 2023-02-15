@@ -14,8 +14,15 @@ const FILTERS = {
         renderPhotos(photos.slice());
     },
     likes: () => {
-        remderPhotos(photos.slice());
-    }
+        renderPhotos(photos.slice().sort((a, b) => {
+            return b.likes - a.likes;
+        }));
+    },
+    popular: () => {
+        renderPhotos(photos.slice().sort((a, b) => {
+            return b.comments.length - a.comments.length;
+        }));
+    },
 }
 
 const removePhotos = () => {
@@ -26,13 +33,22 @@ const removePhotos = () => {
     }
 }
 
+const activeFilter = () => {
+    const filterItems = filterList.querySelectorAll('.filter__item');
+
+    filterItems.forEach(item => item.classList.remove('filter__item--active'));
+}
+
 const filter = (evt) => {
     const target = evt.target.closest('.filter__link');
 
     if (!target) return;
 
     removePhotos();
+    activeFilter();
     
+    target.parentElement.classList.add('filter__item--active');
+    FILTERS[target.parentElement.dataset.filter]();
 }
 
 const onSuccess = (data) => {

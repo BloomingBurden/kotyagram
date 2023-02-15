@@ -17,9 +17,14 @@
   gap: 8px;
   will-change: transform;
 
+  @media (max-width: $tableW) {
+    gap: 6px;
+  }
+
   @media (max-width: 570px) {
     column-count: 1;
     width: auto;
+    gap: 5px;
   }
 
   @media (max-width: 400px) {

@@ -12,7 +12,7 @@ const coords = {
     right: pictureList.getBoundingClientRect().right - window.innerWidth,
 };
 
-const SPEED = 0.01;
+const SPEED = 0.025;
 
 const checkBorder = () => {
     const STEP_BORDER = 20;
