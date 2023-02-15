@@ -766,6 +766,7 @@ fieldset {
   -webkit-transition: 1s all ease;
   -o-transition: 1s all ease;
   transition: 1s all ease;
+  overflow: hidden;
 }
 
 .pictures__item:nth-child(2n) {
@@ -983,6 +984,11 @@ fieldset {
   color: #2e2e2e;
 }
 
+.big-picture__img-wrap {
+  overflow: hidden;
+  width: 100%;
+}
+
 .big-picture__img {
   width: 100%;
 }
@@ -1061,12 +1067,33 @@ fieldset {
 }
 
 .big-picture__item {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.big-picture__avatar {
+  width: 40px;
+  height: 40px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-right: 10px;
 }
 
 .big-picture__message {
   padding: 20px 0;
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .big-picture__message input {
@@ -1076,6 +1103,11 @@ fieldset {
 
 .big-picture__message input:focus {
   outline: 1px solid #ffe753;
+}
+
+.big-picture__face {
+  margin-right: 10px;
+  cursor: pointer;
 }
 
 .big-picture__send {

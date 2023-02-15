@@ -99,7 +99,9 @@
   <section class="big-picture hidden">
     <h2 class="visually-hidden">Изображение</h2>
     <div class="big-picture__wrapper">
-      <img src="" alt="Большая случайная фотография" class="big-picture__img">
+      <div class="big-picture__img-wrap">
+        <img src="" alt="Большая случайная фотография" class="big-picture__img">
+      </div>
       <header class="big-picture__header">
         <div class="big-picture__author">
           <h3 class="big-picture__name"></h3>:
@@ -120,7 +122,8 @@
         </ul>
 
         <div class="big-picture__message">
-          <input type="text" name="comment" placeholder="Ваш комментарий..." maxlength="5000">
+          <img src="@img/icons/icons.svg#avatar_(11)" width="40" height="40" alt="Аватар" class="big-picture__face">
+          <input type="text" name="comment" placeholder="Ваш комментарий..." minlength="5" maxlength="5000">
           <button class="big-picture__send" type="button">Отправить</button>
         </div>
       </div>

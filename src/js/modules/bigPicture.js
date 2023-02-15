@@ -3,18 +3,22 @@ import { request } from "./fetch.js";
 const bigPicture = document.querySelector('.big-picture');
 const bigImg = document.querySelector('.big-picture__img');
 const avatarName = document.querySelector('.big-picture__name');
+const avatarImg = document.querySelector('.big-picture__face');
 const descrImg = document.querySelector('.big-picture__descr');
 const likes = document.querySelector('.big-picture__likes > span');
 const commentSend = document.querySelector('.big-picture__send');
 const commentList = document.querySelector('.big-picture__comments');
 const commentItem = document.querySelector('#comment').content.querySelector('.big-picture__item');
 const close = document.querySelector('.big-picture__close');
-let firstTime = true;
 
 const DATA = {
     like: 0,
     comments: [],
+    avatar: '',
 }
+
+let bindExitModal;
+let bindOnLikes;
 
 const renderComments = (comments) => {
     const elements = document.createDocumentFragment();
@@ -33,9 +37,15 @@ const sendComment = () => {
     const clone = commentItem.cloneNode(true);
     const comment = document.querySelector('.big-picture__message > input');
 
-    clone.querySelector('.big-picture__text').textContent = comment.value;
-    DATA.comments.push(comment.value);
-    commentList.append(clone);
+    if (comment.value.length <= 0) {
+        comment.style.outline = '1px solid red'
+        setTimeout(() => comment.removeAttribute('style'), 3000);
+    } else {
+        clone.querySelector('.big-picture__text').textContent = comment.value;
+        DATA.comments.push(comment.value);
+        commentList.append(clone);
+    }
+
 }
 
 const onLikes = (like) => {
@@ -48,12 +58,31 @@ const onLikes = (like) => {
     }
 }
 
-const onSuccess = (success) => {
+const setAvatar = () => {
+    let count = 0;
+    
+    return function (evt) {
+        let target = evt.target;
+
+        count += 1;
+
+        if (count > 26) count = 1;
+
+        target.src = `img/icons/icons.svg#avatar_(${count})`;
+    }
+}
+
+const reset = () => {
+    commentList.innerHTML = '';
+    DATA.avatar = '';
     DATA.like = 0;
-    firstTime = false;
     DATA.comments = [];
     bigPicture.classList.add('hidden');
     load.classList.add('hidden');
+}
+
+const onSuccess = () => {
+    reset();
 }
 
 const onError = (error) => {
@@ -64,6 +93,10 @@ const exitModal = (picture) => {
     picture.comments = [...picture.comments, ...DATA.comments];
     picture.likes = +picture.likes + DATA.like;
     load.classList.remove('hidden');
+
+    likes.removeEventListener('click', bindOnLikes);
+    close.removeEventListener('click', bindExitModal);
+
     request(onSuccess, onError, 'PUT', JSON.stringify(picture), picture.id);
 }
 
@@ -77,13 +110,18 @@ const show = (picture, filter) => {
     descrImg.textContent = picture.description;
     likes.textContent = picture.likes;
 
-    if (firstTime) {
-        renderComments(picture.comments.slice());
-        likes.addEventListener('click', () => onLikes(picture.likes));
-    }
+    renderComments(picture.comments.slice());
+
+    bindOnLikes = onLikes.bind(null, picture.likes);
+    bindExitModal = exitModal.bind(null, picture);
     
+    likes.addEventListener('click', bindOnLikes);
     commentSend.addEventListener('click', sendComment);
-    close.addEventListener('click', () => exitModal(picture));
+
+    let getAvatar = setAvatar();
+
+    avatarImg.addEventListener('click', getAvatar);
+    close.addEventListener('click', bindExitModal);
 };
 
 export { show }
