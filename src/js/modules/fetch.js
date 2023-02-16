@@ -1,4 +1,4 @@
-const URL = 'http://localhost:3001/data';
+const URL = 'https://bloomingburden.github.io/kotyagram/data.json';
 
 const request = (onSuccess, onError, method, data, id) => {
     fetch(method === 'PUT' ? `${URL}/${id}` : URL, {
