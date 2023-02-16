@@ -59,6 +59,7 @@ const onSuccess = (data) => {
 };
 
 const onError = (error) => {
+    console.log(error);
     console.log(`Попробуйте позже, ошибка: ${error}`);
 }
 
