@@ -18,7 +18,7 @@ const getHeight = () => {
     const content = document.querySelector('.upload');
 
     const setHeight = () => {
-        content.style.height = `${content.offsetWidth}px`;
+        setTimeout(() => {content.style.height = `${content.getBoundingClientRect().width}px`;}, 2000);
     }
 
     window.addEventListener('DOMContentLoaded', setHeight);
@@ -46,7 +46,6 @@ const collapseModal = () => {
     }
 
     window.addEventListener('DOMContentLoaded', closeModal);
-    window.addEventListener('resize', closeModal);
     
     open.addEventListener('click', (evt) => {
         if (upload.classList.contains('upload--closed')) {

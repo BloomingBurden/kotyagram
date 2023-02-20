@@ -28,6 +28,7 @@ const encodeImageFileAsURL = (evt) => {
 // ОТКРЫТЬ IMG С ПК
 input.addEventListener('change', (evt) => {
     const popupEdit = document.querySelector('.upload__overlay');
+    
     encodeImageFileAsURL(evt);
     resetSettings();
     popupEdit.classList.remove('hidden');
@@ -67,7 +68,6 @@ buttonMore.addEventListener('click', () => {
 // ЗАГРУЗИТЬ ИЗОБРАЖЕНИЕ НА СЕРВЕР
 
 const onSuccess = (response) => {
-    closeModal();
     location.reload();
 }
 
@@ -77,6 +77,8 @@ const onError = (error) => {
 
 form.addEventListener('submit', (evt) => {
     evt.preventDefault();
+
+    closeModal();
 
     let myForm = new FormData(form);
 
@@ -90,5 +92,5 @@ form.addEventListener('submit', (evt) => {
 
     myForm = JSON.stringify(formObj);
 
-    request(onSuccess, onError, 'POST', myForm);  
+    request(onSuccess, onError, 'POST', myForm);
 })

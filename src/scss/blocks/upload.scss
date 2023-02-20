@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  z-index: 99;
+  z-index: 9997;
   width: 40%;
   max-width: 480px;
   border-radius: 40px;
@@ -26,7 +26,7 @@
   padding: 0;
   right: -55px;
   position: absolute;
-  z-index: 9997;
+  z-index: 999;
   width: 150px;
   top: 45%;
   transform: translateY(-50%) rotate(-90deg);
@@ -103,7 +103,7 @@
   width: 100vw;
   height: 100vh;
   background-color: rgba(0,0,0,.4);
-  z-index: 999;
+  z-index: 9996;
 }
 
 .upload__wrapper, 

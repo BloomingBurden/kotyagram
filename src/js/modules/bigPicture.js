@@ -83,7 +83,6 @@ const reset = () => {
     DATA.avatar = '';
     DATA.like = 0;
     DATA.comments = [];
-    bigPicture.classList.add('hidden');
     load.classList.add('hidden');
 }
 
@@ -100,6 +99,7 @@ const exitModal = (picture) => {
     picture.likes = +picture.likes + DATA.like;
 
     load.classList.remove('hidden');
+    bigPicture.classList.add('hidden');
 
     likes.removeEventListener('click', bindOnLikes);
     close.removeEventListener('click', bindExitModal);

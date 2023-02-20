@@ -79,6 +79,7 @@
   left: 50%;
   margin: 0 auto;
   display: flex;
+  justify-content: space-around;
   transform: translate(-50%);
   align-items: center;
   background-color: rgba(255,255,255,.5);
@@ -86,13 +87,12 @@
   border-radius: 20px;
 
   span {
+    flex: 0 0 50%;
+    padding-left: 4px;
     font-size: 2px;
     color: #000000;
+    background-size: 3px;
     background-repeat: no-repeat;
-    background-size: 2px;
-    padding-right: 3px;
-    margin-right: 2px;
-    background-position: right center;
     
     &:last-child {
       margin-right: 0;
