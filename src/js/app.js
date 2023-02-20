@@ -52,8 +52,9 @@ const filter = (evt) => {
 }
 
 const onSuccess = (data) => {
+    console.log(data);
     load.classList.add('hidden');
-    photos = data.data.slice();
+    photos = data.slice();
     renderPhotos(photos);
 };
 

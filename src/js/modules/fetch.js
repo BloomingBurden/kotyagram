@@ -1,4 +1,4 @@
-const URL = 'https://bloomingburden.github.io/kotyagram/server/data.json';
+const URL = '../json.php';
 
 const request = (onSuccess, onError, method, data, id) => {
     fetch(method === 'PUT' ? `${URL}/${id}` : URL, {
