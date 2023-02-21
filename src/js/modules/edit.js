@@ -79,6 +79,12 @@ form.addEventListener('submit', (evt) => {
     evt.preventDefault();
 
     closeModal();
+    
+    if (imgName.length > 450000) {
+        alert('Изображение слишком большое.');
+        location.reload();
+        return;
+    }
 
     let myForm = new FormData(form);
 

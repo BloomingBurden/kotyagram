@@ -62,7 +62,7 @@ let blockY = 0;
 const startParallax = (evt) => {
     const left = Math.abs(coords.left)
     const top = Math.abs(coords.top);
-    let SPEED = window.innerWidth <= 768 ? 5 : 2;
+    let SPEED = window.innerWidth <= 768 ? 10 : 3;
 
     if (evt.pageX < blockX) {
         blockX = evt.pageX;

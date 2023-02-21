@@ -80,7 +80,7 @@ const setAvatar = () => {
 
 const reset = () => {
     commentList.innerHTML = '';
-    DATA.avatar = '';
+    DATA.avatar = 'img/icons/icons.svg#avatar_(11)';
     DATA.like = 0;
     DATA.comments = [];
     load.classList.add('hidden');
@@ -95,15 +95,20 @@ const onError = (error) => {
 }
 
 const exitModal = (picture) => {
-    picture.comments = [...picture.comments, ...DATA.comments];
-    picture.likes = +picture.likes + DATA.like;
+    if (DATA.like !== 0 || DATA.comments.length !== 0) {
+        picture.comments = [...picture.comments, ...DATA.comments];
+        picture.likes = +picture.likes + DATA.like;
+        load.classList.remove('hidden');
 
-    load.classList.remove('hidden');
+        request(onSuccess, onError, 'PUT', JSON.stringify(picture));
+    } else {
+        reset();
+    }
+
     bigPicture.classList.add('hidden');
 
     likes.removeEventListener('click', bindOnLikes);
     close.removeEventListener('click', bindExitModal);
-    request(onSuccess, onError, 'PUT', JSON.stringify(picture));
 }
 
 const show = (picture, filter) => {

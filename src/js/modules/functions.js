@@ -46,6 +46,7 @@ const collapseModal = () => {
     }
 
     window.addEventListener('DOMContentLoaded', closeModal);
+    window.addEventListener('resize', () => {upload.style.right = `-${window.innerWidth}px`;});
     
     open.addEventListener('click', (evt) => {
         if (upload.classList.contains('upload--closed')) {
