@@ -1245,6 +1245,7 @@ fieldset {
   width: 100%;
   max-width: 600px;
   z-index: 90;
+  border-radius: 15px;
 }
 
 .filter__list {
@@ -1353,6 +1354,10 @@ fieldset {
             column-count: 1;
     width: auto;
     gap: 5px;
+  }
+
+  .filter {
+    background-color: rgba(0, 0, 0, 0.3);
   }
 }
 

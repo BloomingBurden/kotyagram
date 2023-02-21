@@ -6,6 +6,12 @@
   width: 100%;
   max-width: 600px;
   z-index: 90;
+
+  border-radius: 15px;
+
+  @media (max-width: 570px) {
+    background-color: rgba(0,0,0,0.3);
+  }
 }
 
 .filter__list {
