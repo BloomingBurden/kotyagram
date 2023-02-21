@@ -8,6 +8,7 @@ import './modules/parallax.js';
 const filterList = document.querySelector('.filter__list');
 
 let photos = [];
+window.quantityOfElements = 0;
 
 const FILTERS = {
     none: () => {
@@ -52,9 +53,9 @@ const filter = (evt) => {
 }
 
 const onSuccess = (data) => {
-    console.log(data);
     load.classList.add('hidden');
     photos = data.slice();
+    window.quantityOfElements = photos.length;
     renderPhotos(photos);
 };
 

@@ -103,8 +103,7 @@ const exitModal = (picture) => {
 
     likes.removeEventListener('click', bindOnLikes);
     close.removeEventListener('click', bindExitModal);
-
-    request(onSuccess, onError, 'PUT', JSON.stringify(picture), picture.id);
+    request(onSuccess, onError, 'PUT', JSON.stringify(picture));
 }
 
 const show = (picture, filter) => {

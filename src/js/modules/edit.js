@@ -89,8 +89,11 @@ form.addEventListener('submit', (evt) => {
     const formObj = Object.fromEntries(myForm);
 
     formObj.comments = [];
-
+    formObj.mineId = window.quantityOfElements + 1;
+    
     myForm = JSON.stringify(formObj);
+    
+    load.classList.remove('hidden');
 
     request(onSuccess, onError, 'POST', myForm);
 })

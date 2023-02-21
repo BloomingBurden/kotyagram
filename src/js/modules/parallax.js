@@ -56,21 +56,41 @@ const moveParallax = () => {
 }
 moveParallax();
 
+let blockX = 0;
+let blockY = 0;
+
 const startParallax = (evt) => {
     const left = Math.abs(coords.left)
     const top = Math.abs(coords.top);
+    const SPEED = 0.8;
 
-    const blockX = left + window.innerWidth / 2;
-    const blockY = top + window.innerHeight / 2;
-
-    posX = evt.pageX + left - blockX;
-    posY = evt.pageY + top - blockY;
+    if (evt.pageX < blockX) {
+        blockX = evt.pageX;
+        posX -= SPEED;
+    }
+    if (evt.pageX > blockX) {
+        blockX = evt.pageX;
+        posX += SPEED;
+    }
+    if (evt.pageY < blockY) {
+        blockY = evt.pageY;
+        posY -= SPEED;
+    }
+    if (evt.pageY > blockY) {
+        blockY = evt.pageY;
+        posY += SPEED;
+    }
+    
 }
 
 const parallax = () => {
     picture.ondragstart = () => false;
 
     picture.addEventListener('pointerdown', (evt) => {
+
+        blockX = evt.pageX;
+        blockY = evt.pageY;
+        
         picture.addEventListener('pointermove', startParallax);
         picture.addEventListener('pointerup', () => {
             
