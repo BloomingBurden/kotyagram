@@ -11,16 +11,16 @@ Hello everybody. Photogram - is a project where you can upload funny pictures of
 
 
 ## What was implemented on the site:
-_Parallax_
+### Parallax
 ![Alt Text](https://i.ibb.co/h9nzcW4/ezgif-5-93d80b1cae.gif)
 
-_Popup_
+### Popup
 ![Alt Text](https://i.ibb.co/1JKhqsk/ezgif-com-video-to-gif.gif)
 
-_Comments and likes_
+### Comments and likes
 ![Alt Text](https://i.ibb.co/Dzkrs53/ezgif-com-video-to-gif-1.gif)
 
-_Filter_
+### Filter
 ![Alt Text](https://i.ibb.co/BfkBTff/ezgif-com-video-to-gif-2.gif)
 
 Thanks for attention!
