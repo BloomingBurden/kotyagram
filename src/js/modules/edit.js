@@ -80,7 +80,7 @@ form.addEventListener('submit', (evt) => {
 
     closeModal();
     
-    if (imgName.length > 450000) {
+    if (imgName.length > 800000) {
         alert('Изображение слишком большое.');
         location.reload();
         return;

@@ -15,8 +15,8 @@ const coords = {
 const SPEED = 0.025;
 
 const checkBorder = () => {
-    const STEP_BORDER = 10;
-    const STEP_MOUSE = 10;
+    const STEP_BORDER = 30;
+    const STEP_MOUSE = 5;
 
     if (coords.left >= 30) {
         lastPosX = 30;
@@ -26,7 +26,7 @@ const checkBorder = () => {
         lastPosY = lastPosY - STEP_BORDER;
         posY = posY - STEP_MOUSE;
     }
-    if (coords.bottom <= -30)  {
+    if (coords.bottom <= -30) {
         lastPosY = lastPosY + STEP_BORDER;
         posY = posY + STEP_MOUSE;
     }
@@ -35,6 +35,7 @@ const checkBorder = () => {
         posX = posX + STEP_MOUSE;
     }
 }
+
 
 const moveParallax = () => {
     coords.left = pictureList.getBoundingClientRect().left;
@@ -51,7 +52,7 @@ const moveParallax = () => {
         lastPosX = 0;
     }
     pictureList.style.cssText = `transform: translate(${lastPosX}px, ${lastPosY}px) scale(9)`;
-    
+
     requestAnimationFrame(moveParallax);
 }
 moveParallax();
@@ -80,20 +81,19 @@ const startParallax = (evt) => {
         blockY = evt.pageY;
         posY += SPEED;
     }
-    
+
 }
 
 const parallax = () => {
     picture.ondragstart = () => false;
 
     picture.addEventListener('pointerdown', (evt) => {
-
         blockX = evt.pageX;
         blockY = evt.pageY;
-        
+
         picture.addEventListener('pointermove', startParallax);
         picture.addEventListener('pointerup', () => {
-            
+
             picture.removeEventListener('pointermove', startParallax);
             picture.onpointup = null;
         })
