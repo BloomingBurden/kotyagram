@@ -17,6 +17,9 @@ Hello everybody. Photogram - is a project where you can upload funny pictures of
 ### Popup
 ![hippo](https://i.ibb.co/dLFzD39/bandicam-2023-02-22-15-33-36-383.gif)
 
+### Effects
+![hippo](https://i.ibb.co/mSzGvRV/bandicam-2023-02-22-15-43-00-651.gif)
+
 ### Comments and likes
 ![hippo](https://i.ibb.co/Dzkrs53/ezgif-com-video-to-gif-1.gif)
 
