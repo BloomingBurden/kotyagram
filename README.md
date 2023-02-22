@@ -12,13 +12,13 @@ Hello everybody. Photogram - is a project where you can upload funny pictures of
 
 ## What was implemented on the site:
 ### Parallax
-![hippo](https://i.ibb.co/gWHNkTN/ezgif-com-video-to-gif-3.gif)
+![hippo](https://i.ibb.co/h9nzcW4/ezgif-5-93d80b1cae.gif)
 
 ### Popup
 ![hippo](https://i.ibb.co/1JKhqsk/ezgif-com-video-to-gif.gif)
 
 ### Comments and likes
-![hippo](https://i.ibb.co/gWHNkTN/ezgif-com-video-to-gif-3.gif)
+![hippo](https://i.ibb.co/Dzkrs53/ezgif-com-video-to-gif-1.gif)
 
 ### Filter
 ![hippo](https://i.ibb.co/BfkBTff/ezgif-com-video-to-gif-2.gif)
