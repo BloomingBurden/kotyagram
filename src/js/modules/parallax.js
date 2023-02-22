@@ -15,8 +15,8 @@ const coords = {
 const SPEED = 0.025;
 
 const checkBorder = () => {
-    const STEP_BORDER = 20;
-    const STEP_MOUSE = 20;
+    const STEP_BORDER = 10;
+    const STEP_MOUSE = 10;
 
     if (coords.left >= 30) {
         lastPosX = 30;
@@ -62,7 +62,7 @@ let blockY = 0;
 const startParallax = (evt) => {
     const left = Math.abs(coords.left)
     const top = Math.abs(coords.top);
-    let SPEED = window.innerWidth <= 768 ? 10 : 3;
+    let SPEED = window.innerWidth <= 768 ? 20 : 5;
 
     if (evt.pageX < blockX) {
         blockX = evt.pageX;
