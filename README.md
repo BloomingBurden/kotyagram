@@ -18,7 +18,7 @@ Hello everybody. Photogram - is a project where you can upload funny pictures of
 ![hippo](https://i.ibb.co/1JKhqsk/ezgif-com-video-to-gif.gif)
 
 ### Comments and likes
-![hippo](https://i.ibb.co/Dzkrs53/ezgif-com-video-to-gif-1.gif)
+![hippo](https://i.ibb.co/gWHNkTN/ezgif-com-video-to-gif-3.gif)
 
 ### Filter
 ![hippo](https://i.ibb.co/BfkBTff/ezgif-com-video-to-gif-2.gif)
