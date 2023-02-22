@@ -1,5 +1,5 @@
 # PHOTOGRAM
-Hello everybody. Photogram - is a project where you can upload funny pictures of cats. Comment, like the most funny cats :) In fact, this is an analogue of Instagram without a personal account.
+Hello everybody. Photogram - is a project where you can upload funny pictures of cats. Comment, like the most funny cats :) You can add effects to your photo. In fact, this is an analogue of Instagram without a personal account.
 
 ## What did I use to complete the project?
 1. The whole project is written in pure JavaScript!
