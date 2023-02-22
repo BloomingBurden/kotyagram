@@ -12,7 +12,7 @@ Hello everybody. Photogram - is a project where you can upload funny pictures of
 
 ## What was implemented on the site:
 ### Parallax
-![hippo](https://i.ibb.co/PmTD0s5/bandicam-2023-02-22-15-23-11-284.gif)
+![hippo](https://i.ibb.co/GxsHNfV/bandicam-2023-02-22-15-23-11-284.gif)
 
 ### Popup
 ![hippo](https://i.ibb.co/1JKhqsk/ezgif-com-video-to-gif.gif)
